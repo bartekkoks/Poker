@@ -1,0 +1,49 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+release.properties
+
+#clear-case libs
+libs/
+
+# Java
+*.jar
+*.class
+*.war
+*.ear
+*.log
+*.err
+
+# Gradle
+.gradle
+build
+out
+jenkins.properties
+!**/gradle/wrapper/*.jar
+
+# Eclipse
+.project
+.classpath
+.settings
+/bin
+
+#WebStorm
+/.idea
+
+# NetBeans
+nb-configuration.xml
+nbactions.xml
+
+#IntelliJ
+licensehandler.iml
+.idea/
+*.iml
+
+#test
+afflog.*
+
+#Node
+**/node_modules/**
+**/package-lock.json

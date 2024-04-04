@@ -1,0 +1,39 @@
+buildscript {
+    ext {
+        versions = [
+                lombokVersion              : '1.18.30'
+        ]
+    }
+}
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.4-M1-groovy-4.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+//lombok
+dependencies {
+    implementation group: 'org.projectlombok', name: 'lombok', version: "$versions.lombokVersion"
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: "$versions.lombokVersion"
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: "$versions.lombokVersion"
+
+    testCompileOnly group: 'org.projectlombok', name: 'lombok', version: "$versions.lombokVersion"
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: "$versions.lombokVersion"
+
+}
+
+test {
+    useJUnitPlatform()
+}
